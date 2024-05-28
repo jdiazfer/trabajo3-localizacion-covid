@@ -5,7 +5,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import com.practica.excecption.EmsDuplicateLocationException;
@@ -157,24 +156,11 @@ public class ContactosCovid {
 		}
 	}
 	public int findPersona(String documento) throws EmsPersonNotFoundException {
-		int pos;
-		try {
-			pos = this.poblacion.findPersona(documento);
-			return pos;
-		} catch (EmsPersonNotFoundException e) {
-			throw new EmsPersonNotFoundException();
-		}
+		return poblacion.findPersona(documento);
 	}
 
 	public int findLocalizacion(String documento, String fecha, String hora) throws EmsLocalizationNotFoundException {
-
-		int pos;
-		try {
-			pos = localizacion.findLocalizacion(documento, fecha, hora);
-			return pos;
-		} catch (EmsLocalizationNotFoundException e) {
-			throw new EmsLocalizationNotFoundException();
-		}
+		return localizacion.findLocalizacion(documento, fecha, hora);
 	}
 
 	public List<PosicionPersona> localizacionPersona(String documento) throws EmsPersonNotFoundException {
@@ -199,13 +185,11 @@ public class ContactosCovid {
 	}
 
 	private String[] dividirEntrada(String input) {
-		String cadenas[] = input.split("\\n");
-		return cadenas;
+		return input.split("\\n");
 	}
 
 	private String[] dividirLineaData(String data) {
-		String cadenas[] = data.split("\\;");
-		return cadenas;
+		return data.split("\\;");
 	}
 
 }
