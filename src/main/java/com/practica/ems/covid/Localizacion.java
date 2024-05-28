@@ -50,7 +50,7 @@ public class Localizacion {
 	}
 	public void delLocalizacion(String documento, String fecha, String hora) throws EmsLocalizationNotFoundException {
 	    int pos=-1;
-	    int i;
+
 	    /**
 	     *  Busca la localización, sino existe lanza una excepción
 	     */
@@ -84,7 +84,6 @@ public class Localizacion {
 		for(int i = 0; i < this.lista.size(); i++) {
 			PosicionPersona pp = lista.get(i);
 	        cadena += String.format("%s;", pp.getDocumento());
-	        FechaHora fecha = pp.getFechaPosicion();
 			cadena += pp.getFechaPosicion().toString();
 	        		pp.getCoordenada().getLongitud();
 	    }
