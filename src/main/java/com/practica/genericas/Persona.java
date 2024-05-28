@@ -2,11 +2,11 @@ package com.practica.genericas;
 
 import com.practica.excecption.EmsInvalidNumberOfDataException;
 public class Persona {
-	private static int MAX_DATOS_PERSONA = 7;
+	private static int MAX_DATOS_PERSONA = 8;
 	private String nombre, apellidos, documento, email, direccion, cp;
 	FechaHora fechaNacimiento;
 	public static Persona parsePersona(String[] data) throws EmsInvalidNumberOfDataException{
-		if (data.length <= MAX_DATOS_PERSONA) {
+		if (data.length < MAX_DATOS_PERSONA) {{
 			throw new EmsInvalidNumberOfDataException("Invalid number of fields for PERSONA");
 		}
 
