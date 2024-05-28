@@ -4,7 +4,7 @@ package com.practica.ems.covid;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.util.ArrayList;
+
 import java.util.List;
 
 import com.practica.excecption.EmsDuplicateLocationException;
@@ -168,19 +168,7 @@ public class ContactosCovid {
 	}
 
 	public boolean delPersona(String documento) throws EmsPersonNotFoundException {
-		int cont = 0, pos = -1;
-		Iterator<Persona> it = this.poblacion.getLista().iterator();
-		while (it.hasNext()) {
-			Persona persona = it.next();
-			if (persona.getDocumento().equals(documento)) {
-				pos = cont;
-			}
-			cont++;
-		}
-		if (pos == -1) {
-			throw new EmsPersonNotFoundException();
-		}
-		this.poblacion.getLista().remove(pos);
+		poblacion.delPersona(documento);
 		return false;
 	}
 

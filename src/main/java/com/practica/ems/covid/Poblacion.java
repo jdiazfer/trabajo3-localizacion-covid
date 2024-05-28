@@ -33,20 +33,10 @@ public class Poblacion {
 			lista.add(persona);
 		} 
 	}
-	
+
 	public void delPersona(String documento) throws EmsPersonNotFoundException {
-		int pos=-1;
-		/**
-		 * Busca la persona por documento, en caso de encontrarla
-		 * devuelve la posición dentro de la lista, sino está lanza
-		 * una excepción
-		 */
-		try {
-			pos = findPersona(documento);
-		} catch (EmsPersonNotFoundException e) {
-			throw new EmsPersonNotFoundException();
-		}
-		lista.remove(pos);		
+		int pos = findPersona(documento);
+		lista.remove(pos - 1);
 	}
 	
 	public int findPersona (String documento) throws EmsPersonNotFoundException {
