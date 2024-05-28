@@ -1,11 +1,13 @@
 package com.practica.ems.covid;
 
-
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 
 import com.practica.excecption.EmsDuplicateLocationException;
 import com.practica.excecption.EmsLocalizationNotFoundException;
+import com.practica.excecption.EmsPersonNotFoundException;
 import com.practica.genericas.FechaHora;
 import com.practica.genericas.PosicionPersona;
 
@@ -48,8 +50,29 @@ public class Localizacion {
 	    } 
 	    throw new EmsLocalizationNotFoundException();
 	}
+
+	public List<PosicionPersona> localizacionPersona(String documento) throws EmsPersonNotFoundException {
+		int cont = 0;
+		List<PosicionPersona> lista = new ArrayList<PosicionPersona>();
+		Iterator<PosicionPersona> it = lista.iterator();
+		while (it.hasNext()) {
+			PosicionPersona pp = it.next();
+			if (pp.getDocumento().equals(documento)) {
+				cont++;
+				lista.add(pp);
+			}
+		}
+
+		if (cont == 0) {
+			throw new EmsPersonNotFoundException();
+		}
+
+		return lista;
+	}
+
 	public void delLocalizacion(String documento, String fecha, String hora) throws EmsLocalizationNotFoundException {
 	    int pos=-1;
+
 
 	    /**
 	     *  Busca la localización, sino existe lanza una excepción
