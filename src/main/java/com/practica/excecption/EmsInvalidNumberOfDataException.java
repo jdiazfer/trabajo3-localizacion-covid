@@ -1,7 +1,7 @@
 package com.practica.excecption;
 
 
-public class EmsInvalidNumberOfDataException extends Exception {
+public class EmsInvalidNumberOfDataException extends IllegalArgumentException {
 
 	public EmsInvalidNumberOfDataException() {
 		super("NUMERO DE PARAMETROS INCORRECTOS!");

@@ -1,7 +1,7 @@
 package com.practica.excecption;
 
 
-public class EmsInvalidTypeException extends Exception{
+public class EmsInvalidTypeException extends IllegalArgumentException{
 
 	public EmsInvalidTypeException() {
 		super("TIPO DE ENTRADA NO VALIDA!");
