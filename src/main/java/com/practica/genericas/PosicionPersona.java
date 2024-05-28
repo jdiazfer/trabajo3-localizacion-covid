@@ -68,10 +68,10 @@ public class PosicionPersona {
 
 	@Override
 	public int hashCode() {
-		final int prime = 23;
+		final int PRIME = 23;
 		int result = 1;
-		result = prime * result + ((documento == null) ? 0 : documento.hashCode());
-		result = prime * result + ((fechaPosicion == null) ? 0 : fechaPosicion.hashCode());
+		result = PRIME * result + ((documento == null) ? 0 : documento.hashCode());
+		result = PRIME * result + ((fechaPosicion == null) ? 0 : fechaPosicion.hashCode());
 		return result;
 	}
 		
